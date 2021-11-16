@@ -19,18 +19,17 @@
 // Користувач вводить номер квартири просто в змінні або через prompt('') .
 //     Програма повинна зазначити, в якому під'їзді знаходиться дана квартира.
 
-// let apartment = +prompt('Enter apartment number from 1 to 90')
-//
-// if (apartment <=20) {
-//     alert('Entrance 1')
-// } else if (apartment <=48) {
-//     alert('Entrance 2')
-// } else if (apartment <=90) {
-//     alert('Entrance 3')
-// } else {
-//     alert('enter valid apartment number')
-// }
+let apartment = +prompt('Enter apartment number from 1 to 90')
 
+if (apartment <=20) {
+    alert(1)
+}
+if (apartment >20 && apartment <=48) {
+    alert(2)
+}
+if (apartment >48 && apartment <=90) {
+    alert(3)
+}
 //- Ми маємо змінну number в яку користувач задає числове значення,  якщо змінна рівна 10 вивести повідомлення ВІРНО, якщо змінна не рівна 10 - тоді НЕВІРНО
 
 // let number = +prompt('enter number')
