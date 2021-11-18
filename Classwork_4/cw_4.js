@@ -95,7 +95,6 @@
 
 // let forward = [1,2,3];
 // function reverse(array) {
-//     let backward = array.reverse()
-//     return backward;
+//     return array.reverse()
 // }
 // console.log(reverse(forward))
