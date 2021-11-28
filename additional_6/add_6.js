@@ -17,6 +17,32 @@
 // someeMAIL@i.ua
 // some.email@gmail.com
 
+// let mail = 'someemail@gmail.com';
+// let mail1 = 'someeMAIL@gmail.com'
+// let mail2 = 'someeMAIL@i.ua'
+// let mail3 = 'some.email@gmail.com'
+// function emailValidator(email) {
+//     if (!email.includes('@')) {
+//         return console.log('Your email should include @ sign')
+//     }
+//     let emailSignIndex = email.indexOf('@')
+//     if (email.substring(0,emailSignIndex).length < 3) {
+//         return console.log('enter minimum 3 charts before @')
+//     }
+//     if (email.substring(0,emailSignIndex).includes('.')) {
+//         return console.log('your email name shouldnt include <.> sign before <@> sign')
+//     }
+//     let dotIndex = email.indexOf('.')
+//     if (email.substring(emailSignIndex,dotIndex).length <= 2) {
+//         return console.log('domain name should be longer then 2 charts')
+//     } else return console.log(`Your email - ${email} is valid!`)
+//
+// }
+// console.log(emailValidator(mail))
+// console.log(emailValidator(mail1))
+// console.log(emailValidator(mail2))
+// console.log(emailValidator(mail3))
+
 // - є масив
 // let coursesArray = [
 //     {
