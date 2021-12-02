@@ -158,6 +158,7 @@
 //         li.style.border = 'dashed blue'
 //         li.style.margin = '10px'
 //         li.style.padding = '10px'
+//         li.style.listStyle = 'none'
 //         li.innerText = item
 //         modules.append(li)
 //     }
