@@ -248,6 +248,51 @@ let usersList = [
 // }
 // console.log(greet.call(bruce));
 
-let div = document.getElementsByClassName('ids')[0]
-div.textContent = usersList[0].name
-console.log(div);
+// let div = document.getElementsByClassName('ids')[0]
+// div.textContent = usersList[0].name
+// console.log(div);
+
+for (let user of usersList) {
+    let main = document.createElement('div')
+    let id = document.createElement('h1')
+    let name = document.createElement('h1')
+    let username = document.createElement('h1')
+    let email = document.createElement('h2')
+    let address = document.createElement('div')
+    let street = document.createElement('div')
+    let suit = document.createElement('div')
+    let city = document.createElement('div')
+    let zipcode = document.createElement('div')
+    let geo = document.createElement('div')
+    let lat = document.createElement('div')
+    let lng = document.createElement('div')
+    let phone = document.createElement('h2')
+    let website = document.createElement('div')
+    let company = document.createElement('div')
+    let companyName = document.createElement('div')
+    let catchPhrase = document.createElement('div')
+    let bs = document.createElement('div')
+    let flex1 = document.createElement('div')
+    let flex2 = document.createElement('div')
+    let objects = document.createElement('div')
+
+    id.innerText = user.id
+    name.innerText = user.name
+    username.innerText = user.username
+    email.innerText = user.email
+    phone.innerText = user.phone
+    objects.innerText = 'City'
+
+    flex1.style.display = 'flex'
+    flex2.style.display = 'flex'
+    flex1.style.columnGap = '10px'
+    flex2.style.columnGap = '10px'
+
+    document.body.append(main)
+    flex1.append(id,name,username)
+    flex2.append(email,phone)
+    main.append(flex1,address,flex2,objects,website,company)
+    address.append(street,suit,city,zipcode,geo)
+    geo.append(lat,lng)
+    company.append(companyName,catchPhrase,bs)
+}
