@@ -1,3 +1,8 @@
+/*За допомогою циклу вивести всю інформацію про користувачів використовуючи шаблон Template 1.1
+			* за допомоги стилів, побудувати сітку по 2 об'єкта в лінію
+			*
+			* */
+
 let usersList = [
     {
         id: 1,
@@ -275,24 +280,57 @@ for (let user of usersList) {
     let flex1 = document.createElement('div')
     let flex2 = document.createElement('div')
     let objects = document.createElement('div')
+    let objects1 = document.createElement('div')
+    let objects2 = document.createElement('div')
+    let objects3 = document.createElement('div')
+    let flexStreet = document.createElement('div')
+    let flexCity = document.createElement('div')
+    let flexSuit = document.createElement('div')
+    let flexZip = document.createElement('div')
+    let here = document.getElementsByClassName('here')
 
-    id.innerText = user.id
-    name.innerText = user.name
+    id.innerText = `${user.id} -`
+    name.innerText = `${user.name} -`
     username.innerText = user.username
-    email.innerText = user.email
+    email.innerText = `${user.email} -`
     phone.innerText = user.phone
-    objects.innerText = 'City'
+    objects.innerText = 'City -'
+    objects1.innerText = 'Street -'
+    objects2.innerText = 'Suit -'
+    objects3.innerText = 'Zipcode -'
+    city.innerText = user.address.city
+    street.innerText = user.address.street
+    suit.innerText = user.address.suite
+    zipcode.innerText = user.address.zipcode
 
     flex1.style.display = 'flex'
     flex2.style.display = 'flex'
+    flexCity.style.display = 'flex'
+    flexStreet.style.display = 'flex'
+    flexSuit.style.display = 'flex'
+    flexZip.style.display = 'flex'
     flex1.style.columnGap = '10px'
     flex2.style.columnGap = '10px'
+    flexCity.style.columnGap = '5px'
+    flexStreet.style.columnGap = '5px'
+    flexSuit.style.columnGap = '5px'
+    flexZip.style.columnGap = '5px'
+    flexCity.style.marginTop = '15px'
+    flexSuit.style.marginTop = '15px'
+    flexCity.style.marginBottom = '15px'
+    flexSuit.style.marginBottom = '15px'
+    main.style.width = '650px'
 
-    document.body.append(main)
+    document.body.append(here)
+    here[0].append(main)
     flex1.append(id,name,username)
     flex2.append(email,phone)
-    main.append(flex1,address,flex2,objects,website,company)
-    address.append(street,suit,city,zipcode,geo)
+    flexCity.append(objects,city)
+    flexStreet.append(objects1,street)
+    flexSuit.append(objects2,suit)
+    flexZip.append(objects3,zipcode)
+    main.append(flex1,flex2,flexCity,flexStreet,flexSuit,flexZip)
+    address.append(geo)
     geo.append(lat,lng)
     company.append(companyName,catchPhrase,bs)
 }

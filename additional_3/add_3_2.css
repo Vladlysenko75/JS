@@ -1,0 +1,7 @@
+.here {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 95%;
+}
