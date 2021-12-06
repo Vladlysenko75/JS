@@ -122,16 +122,16 @@
 //     створити скріпт, котрий зчитує всі заголовки, та робить в блоці з id=content з них список(ul>li), який буде змістом того, що знаходиться на сторінці.
 //     Скріпт повинен працювати навіть якщо кількість блоків з заголовком та параграфом зміниться.
 //
-let target = document.getElementsByTagName('h2')
-let write = document.getElementById('content')
-let list = document.createElement('ul')
-target[0].appendChild(list)
-for (let i = 0; i <target.length; i++) {
-    let rules = document.createElement('li')
-    rules.innerText = target[i].innerText
-    write.append(list)
-    list.append(rules)
-}
+// let target = document.getElementsByTagName('h2')
+// let write = document.getElementById('content')
+// let list = document.createElement('ul')
+// target[0].appendChild(list)
+// for (let i = 0; i <target.length; i++) {
+//     let rules = document.createElement('li')
+//     rules.innerText = target[i].innerText
+//     write.append(list)
+//     list.append(rules)
+// }
 
 
 // let rules = [
