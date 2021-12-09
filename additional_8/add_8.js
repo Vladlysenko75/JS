@@ -1,7 +1,10 @@
 let classNames = [];
+
 function recursion(startItems) {
     if (startItems.className !== '') {
-        classNames.push(startItems.className)
+        for (let nss of startItems.classList) {
+            classNames.push(nss)
+        }
     }
     if (startItems.children.length) {
         for (let item of startItems.children) {
@@ -12,3 +15,5 @@ function recursion(startItems) {
 
 recursion(document.body)
 console.log(classNames)
+
+
