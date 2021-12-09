@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Favourites</title>
+</head>
+<body>
+<script>
+    console.log(JSON.parse(localStorage.getItem('favourite')));
+    let favourites = JSON.parse(localStorage.getItem('favourite'));
+    for (let favourite of favourites) {
+        let userName = document.createElement('div');
+        let userAge = document.createElement('div');
+        let userStatus = document.createElement('div');
+
+        userName.innerText = favourite.name
+        userAge.innerText = favourite.age
+        userStatus.innerText = favourite.status
+
+        document.body.append(userName,userAge,userStatus)
+    }
+
+</script>
+</body>
+</html>

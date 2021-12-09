@@ -14,28 +14,23 @@ let users = [
 ];
 //створити під кожен об'єкт свій блок з конопкою "додати до улюблених" при натисканні на яку об'єкт потрапляє до масиву favorites улюблених обраних об'єктів в локальному сховищі.
 //Створити сторніку favorites.html при переході на яку потрібно вивест в документ всіх обраних на попередньому етапі.
-let favourites = [];
-for (let i = 0; i < users.length; i++) {
+for (let user of users) {
     let userName = document.createElement('div');
     let userAge = document.createElement('div');
     let userStatus = document.createElement('div');
     let userBlock = document.createElement('div');
     let favourite = document.createElement('button');
-    userBlock.className = `user-${i + 1}`
-    favourite.id = `user-${i + 1}`
-
-
-
     favourite.innerText = 'Add to Favourite'
-    userName.innerText = users[i].name
-    userAge.innerText = users[i].age
-    userStatus.innerText = users[i].status
 
+    userName.innerText = user.name
+    userAge.innerText = user.age
+    userStatus.innerText = user.status
     favourite.onclick = function () {
-        favourites.push(users[2])
+        let favourites = JSON.parse(localStorage.getItem('favourite')) || [];
+        favourites.push(user)
+        localStorage.setItem('favourite',JSON.stringify(favourites))
     }
 
     userBlock.append(userName, userAge, userStatus, favourite);
     document.body.appendChild(userBlock)
 }
-console.log(favourites)
