@@ -186,16 +186,16 @@ let classNames = [];
 // }
 // recursion(document.body)
 
-function recursion (startElement) {
-    console.log(startElement)
-    if (startElement.children.length) {
-        for (let i = 0; i < startElement.children.length; i++) {
-            recursion(startElement.children[i])
-            // console.log(startElement.children[i])
-        }
-    }
-}
-recursion(document.body)
+// function recursion (startElement) {
+//     console.log(startElement)
+//     if (startElement.children.length) {
+//         for (let i = 0; i < startElement.children.length; i++) {
+//             recursion(startElement.children[i])
+//             // console.log(startElement.children[i])
+//         }
+//     }
+// }
+// recursion(document.body)
 
 // function recursion(startElement) {
 //     console.log(startElement)
@@ -238,8 +238,8 @@ recursion(document.body)
 //
 //     }
 // }
-// //
-// recursion(document.body)
+//
+recursion(document.body)
 
 
 
