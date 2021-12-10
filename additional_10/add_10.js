@@ -141,136 +141,83 @@
 // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
 //     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
 
-
-// let hf = document.body.children[0].children[0]
-// console.log(hf);
-// let nexxxt = hf.nextElementSibling;
-// console.log(nexxxt);
-// console.log(nexxxt.nextElementSibling)
-// console.log(hf.parentElement.children.length);
-
-
 let forward = document.createElement('button');
 let backward = document.createElement('button');
 forward.innerText = 'Forward';
 backward.innerText = 'Backward';
 document.body.append(forward)
 document.body.append(backward)
-let classNames = [];
-// forward.onclick = function recursion(startElement) {
-//         console.log(startElement)
-//         if (startElement.children.length) {
-//             for (let i = 0, x = 0; i < startElement.children.length; i++)
-//                 recursion(startElement.children[i])
-//             // console.log(startElement.children[i])
-//         }
-// }
-// function recursion (startElement) {
-//     console.log(startElement)
-//     if (startElement.children.length) {
-//         for (let element of startElement.children) {
-//                 recursion(element)
-//             }
-//         }
-// }
-// recursion(document.body)
+let dom = [];
 
-// function recursion (startElement) {
-//     console.log(startElement)
-//     if (startElement.children.length) {
-//         for (let i = 0; i < startElement.children.length; i++) {
-//             recursion(startElement.children[i])
-//             // console.log(startElement.children[i])
-//         }
-//     }
-// }
-// recursion(document.body)
+function recursion(startElement) {
+    // console.log(startElement)
+    dom.push(startElement)
+    if (startElement.children.length) {
+        for (let i = 0; i < startElement.children.length; i++)
+            recursion(startElement.children[i])
+    }
+}
 
-// function recursion (startElement) {
-//     console.log(startElement)
-//     if (startElement.children.length) {
-//         for (let i = 0; i < startElement.children.length; i++) {
-//             recursion(startElement.children[i])
-//             // console.log(startElement.children[i])
-//         }
-//     }
-// }
-// recursion(document.body)
-
-// function recursion(startElement) {
-//     console.log(startElement)
-//     if (startElement.children.length) {
-//         for (let i = 0, x = 0; i < startElement.children.length; i++)
-//             recursion(startElement.children[i])
-//         // console.log(startElement.children[i])
-//     }
-// }
-
-
-
-// function up (start) {
-//     if (startitems.nextElementSibling === null) {
-//         return start.nextElementSibling
-//     } else {
-//
-//     }
-//     if (start.nextElementSibling === null) {
-//
-//     }
-// }
-// function recursion(startItems) {
-//     forward.onclick = function () {
-//         let newitem = startItems.children[0]
-//         if (startItems.children.length) {
-//             console.log(newitem)
-//             recursion(newitem)
-//             // console.log(nextItem)
-//             // console.log(startItems)
-//         } else {
-//             console.log(startItems.nextElementSibling)
-//             recursion(startItems.nextElementSibling)
-//             if (startItems.nextElementSibling === null) {
-//                 console.log(startItems.parentElement)
-//             }
-//         }
-//
-//         // } else recursion(startItems.nextElementSibling);
-//
-//     }
-// }
-//
 recursion(document.body)
+let count = 0;
+forward.onclick = function () {
+    let next = dom[count];
+    console.log(next)
+    if (count < dom.length) {
+        count++
+    }
+    if (count === dom.length) {
+        return console.log('That`s all folks! Move Backward!')
+    }
+};
+backward.onclick = function () {
+    let current = dom[count];
+    count--
+    console.log(current)
+    if (current === undefined) {
+        console.log('That`s all folks! Move Forward!')
+    }
+};
 
-
-
-// function recursion(startItems) {
-//     forward.onclick = function () {
-//         let newitem = startItems.children[0]
-//         if (startItems.children.length) {
-//             console.log(newitem)
-//             recursion(newitem)
-//             // console.log(nextItem)
-//             // console.log(startItems)
-//         } else {
-//             console.log(startItems.nextElementSibling)
-//             recursion(startItems.nextElementSibling)
-//             if (startItems.nextElementSibling === null) {
-//                 console.log(startItems.parentElement)
-//             }
-//         }
-//
-//         // } else recursion(startItems.nextElementSibling);
-//
-//     }
-// }
-// //
-// recursion(document.body)
-//
-// function recursion2() {
-//
-// }
 //
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+
+let i = 1;
+let images = [];
+let nextPic = document.createElement('button');
+let previousPic = document.createElement('button');
+nextPic.innerText = 'Next Picture';
+previousPic.innerText = 'Previous Picture';
+document.body.append(nextPic, previousPic)
+
+images[0] = "https://salvemusic.com.ua/wp-content/uploads/2020/12/jim-morrison.jpg";
+images[1] = "https://i.hurimg.com/i/hdn/75/600x400/60ded33f4e3fdf0bfcebef57.jpeg";
+images[2] = "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F041ad41a-4828-11ea-a5b7-24df8ee7a872.jpg?crop=3120%2C3120%2C31%2C210";
+images[3] = "https://lastfm.freetls.fastly.net/i/u/770x0/4dcc6ee88ea14805a62b3b3e54a87c78.jpg";
+
+nextPic.onclick = function () {
+    document.slide.src = images[i];
+    if (i < images.length - 1) {
+        i++;
+    } else i = 0;
+}
+previousPic.onclick = function () {
+    document.slide.src = images[i];
+    if (i) {
+        i--;
+    } else i = 3;
+}
+
 //
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
+
+document.onmouseup = function wrapSelectedText() {
+    var selection= window.getSelection().getRangeAt(0);
+    var selectedText = selection.extractContents();
+    var span= document.createElement("span");
+    span.style.fontWeight = "Bold";
+    span.appendChild(selectedText);
+    selection.insertNode(span);
+}
+
