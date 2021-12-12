@@ -26,16 +26,17 @@ let inputModel = document.createElement('input')
 let inputType = document.createElement('input')
 let inputVolume = document.createElement('input')
 let sendBtn = document.createElement('button')
-let car = {};
-
+let box = 'box';
 sendBtn.innerText = 'Send';
-
-    sendBtn.onclick = function () {
-        car.Model = inputModel.value;
-        car.Type = inputType.value;
-        car.Volume = inputVolume.value;
-        localStorage.setItem('Car', JSON.stringify(car))
-    }
 
 carForm.append(inputModel,inputType,inputVolume);
 document.body.append(carForm,sendBtn)
+
+let saveCar = (model, type, volume) => {
+    let newArr = JSON.parse(localStorage.getItem(box)) || [];
+    newArr.push({model, type, volume})
+    localStorage.setItem(box, JSON.stringify(newArr));
+};
+sendBtn.onclick = () => {
+    saveCar(inputModel.value, inputType.value, inputVolume.value);
+}
