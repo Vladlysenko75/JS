@@ -3,12 +3,10 @@
 // https://jsonplaceholder.typicode.com/posts
 //     зробити кнопку до кожного поста. при кліку на яку виводяться в окремий блок всі коментарі поточного поста
 
-let loca = document.getElementById('here');
 fetch('https://jsonplaceholder.typicode.com/posts')
     .then(resp => resp.json())
     .then(arr => {
         for (let obj of arr) {
-            console.log(obj)
             let box = document.createElement('div');
             let boxId = document.createElement('div');
             let boxBody = document.createElement('div');
