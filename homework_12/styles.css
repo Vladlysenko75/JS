@@ -1,0 +1,18 @@
+#here {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1400px;
+}
+
+.post {
+    max-width: 250px;
+    justify-content: center;
+    margin: 10px;
+}
+
+.comment {
+    max-width: 250px;
+    justify-content: center;
+    margin: 10px;
+}
