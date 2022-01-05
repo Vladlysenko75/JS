@@ -1,0 +1,52 @@
+.userBox {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#user {
+    background: linear-gradient(#c800ff, #ff8100);
+}
+
+#titles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: linear-gradient(#fffa00, #00ff04);
+}
+
+.postbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+}
+
+.postbtn {
+    background: lightgoldenrodyellow;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+    color: pink;
+}
+
+.fullpostbtn {
+    width: 15vw;
+    height: 25px;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+    color: #26fff7;
+    background: repeating-linear-gradient(-45deg, red, red 5px, blue 5px, blue 10px);
+}

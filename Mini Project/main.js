@@ -5,14 +5,15 @@ fetch('https://jsonplaceholder.typicode.com/users')
     .then(resp => resp.json())
     .then(arr => {
         for (let obj of arr) {
-            console.log(obj)
             let main = document.createElement('div');
             let id = document.createElement('div');
             let name = document.createElement('div');
-            let btn = document.createElement('a')
+            let btn = document.createElement('a');
+            let location = document.getElementById('users')
+            let products = 'products';
 
-            id.innerText = obj.id;
-            name.innerText = obj.name;
+            id.innerText = `ID: ${obj.id}`;
+            name.innerText = `Name: ${obj.name}`;
             btn.innerText = 'Get information about this user';
             btn.setAttribute('href', 'user-details.html');
 
@@ -25,8 +26,9 @@ fetch('https://jsonplaceholder.typicode.com/users')
             main.style.border = '5px solid red';
             main.style.margin = '5px';
             main.style.padding = '5px';
+            main.style.width = '45vw';
 
-            document.body.appendChild(main)
+            location.appendChild(main)
             main.append(id, name, btn)
         }
     })

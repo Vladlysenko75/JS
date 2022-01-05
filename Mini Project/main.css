@@ -1,0 +1,14 @@
+#users {
+    background: linear-gradient(#5bf3c9, pink);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+body {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+}
